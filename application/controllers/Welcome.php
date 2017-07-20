@@ -21,19 +21,8 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->library('email');
-		$config['protocol'] = 'smtp';
-		$config['smtp_host'] = 'smtp.163.com';
-		$config['smtp_user'] = 'liupenglily@163.com';
-		$config['smtp_pass'] = 'liupeng08144';
-		$config['smtp_port'] = '25';
-	//	$config['smtp_crypto'] = 'tls';
-		// $config['wordwrap'] = TRUE;
-
-		$this->email->initialize($config);
 		$this->email->from('liupenglily@163.com', '刘朋');
 		$this->email->to('liupeng17@baidu.com');
-	//	$this->email->cc('liupenglily@163.com');
-	//	$this->email->bcc('them@their-example.com');
 
 		$this->email->subject('Email Test');
 		$this->email->message('Testing the email class.');
