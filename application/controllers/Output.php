@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Output extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,10 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data = array(
-			'a' => 1,
-			'b' => 2,
-		);
-		$this->load->view('welcome_message', $data);
+		$this->output->set_content_type('application/json');
+		//必须要放在代码最后
+	    $this->output->set_output(json_encode(array('foo' => 'bar')));
 	}
 }
